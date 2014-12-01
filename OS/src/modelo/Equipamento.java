@@ -3,6 +3,7 @@ package modelo;
 public class Equipamento {
 	public int idEquipamento;
 	public String tombo;
+	public String nomeEquipamento;
 	public TipoDeEquipamento tipoDeEquipamento;
 
 	public int getIdEquipamento() {
@@ -28,5 +29,14 @@ public class Equipamento {
 	public void setTipoDeEquipamento(TipoDeEquipamento tipoDeEquipamento) {
 		this.tipoDeEquipamento = tipoDeEquipamento;
 	}
+
+	public String getNomeEquipamento() {
+		return nomeEquipamento;
+	}
+
+	public void setNomeEquipamento(String nomeEquipamento) {
+		this.nomeEquipamento = nomeEquipamento;
+	}
+	
 
 }

@@ -1,0 +1,42 @@
+@CHARSET "ISO-8859-1";
+
+   
+    img{
+        position:absolute;
+        top: 125px;
+        left: 250px;
+    }
+    
+    body{
+        background-image: url("imagens/azul.png");    
+    }
+            
+    form{
+        position:absolute;
+        top: 370px;
+        left: 440px;
+    }
+
+
+        .txtarea {
+        height: 20px;
+        }
+
+        
+        
+        #dusuario{
+        	position:relative;
+        	float: left;
+        }
+        #dsenha{        
+        	position:relative;
+        	float: left;
+        	text-align: left;
+        	left: 20px;
+        }
+        #dbotao{
+        	position:relative;
+        	float: left;
+        	left: 50px;
+        	top: 10px;
+        }

@@ -15,7 +15,7 @@ public class TipoDeEquipamentoDAO {
 	TipoDeEquipamento tipoDeEquipamento;
 	ResultSet rs;
 	List<TipoDeEquipamento> tipoDeEquipamentos;
-	static Conexao bd = Conexao.getInstance();
+	static ConexaoSingleton bd = ConexaoSingleton.getInstance();
 
 	public TipoDeEquipamentoDAO() {
 
@@ -31,7 +31,7 @@ public class TipoDeEquipamentoDAO {
 
 			stmt.setString(1, tipoDeEquipamento.getNomeTipoDeEquipamento());
 			stmt.setString(3, tipoDeEquipamento.getDescricao());
-			stmt.execute();
+			bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -50,7 +50,7 @@ public class TipoDeEquipamentoDAO {
 			stmt.setString(2, tipoDeEquipamento.getDescricao());
 			stmt.setInt(3, tipoDeEquipamento.getIdTipoDeEquipamento());
 
-			stmt.execute();
+			bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -64,7 +64,7 @@ public class TipoDeEquipamentoDAO {
 			stmt = con
 					.prepareStatement("delete from tipodeequipamento where idtipodeequipamentor=?");
 			stmt.setInt(1, idTipoDeEquipamento);
-			stmt.execute();
+			bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -75,7 +75,7 @@ public class TipoDeEquipamentoDAO {
 	public List<TipoDeEquipamento> getListarTipoDeEquipamento() {
 		try {
 			stmt = con.prepareStatement("select * from setor");
-			rs = stmt.executeQuery();
+			rs = bd.executarBuscaSQL(stmt);
 			tipoDeEquipamentos = new ArrayList<TipoDeEquipamento>();
 
 			while (rs.next()) {
@@ -103,7 +103,7 @@ public class TipoDeEquipamentoDAO {
 			stmt = con
 					.prepareStatement("select * from tipodeequipamento where idtipodeequipamento= ?");
 			stmt.setInt(1, idTipoDeEquipamento);
-			rs = stmt.executeQuery();
+			rs = bd.executarBuscaSQL(stmt);
 
 			while (rs.next()) {
 

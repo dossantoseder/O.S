@@ -4,6 +4,7 @@ public class Setor {
 	
 	public int idSetor;
 	public String nomeSetor;
+
 	public int getIdSetor() {
 		return idSetor;
 	}

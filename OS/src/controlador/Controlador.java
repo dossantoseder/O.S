@@ -25,7 +25,8 @@ public class Controlador extends HttpServlet {
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		String logicaoperacao = request.getParameter("operacao");
+		String logicaoperacao = request.getParameter("controlador");
+		//String logicaoperacao = (String)request.getAttribute("controlador");
 		String className = "controlador.command." + logicaoperacao;
 
 		try {
@@ -45,7 +46,7 @@ public class Controlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubzz
 	}
 
 	/**
@@ -58,3 +59,4 @@ public class Controlador extends HttpServlet {
 	}
 
 }
+

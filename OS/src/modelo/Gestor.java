@@ -1,5 +1,5 @@
 package modelo;
 
-public class Gestor {
+public class Gestor extends Usuario{
 
 }
