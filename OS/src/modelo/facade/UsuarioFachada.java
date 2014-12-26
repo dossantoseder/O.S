@@ -31,6 +31,13 @@ public class UsuarioFachada {
 
 	}
 
+	public Usuario getUsuarioID(int idUusuario) {
+		usuario = usuarioDAO.getUsuarioID(idUusuario);
+		
+		return usuario;
+
+	}
+
 	public void listaUsuarios() {
 		usuarioDAO.listaUsuarios();
 

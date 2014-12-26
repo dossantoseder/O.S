@@ -9,6 +9,10 @@ public class Situacao {
 	private Date dataOS;
 	private Administrador administrador;
 	private OrdemDeServico  ordemDeServico;
+	
+	public Situacao(OrdemDeServico  ordemDeServico){
+		this.ordemDeServico = ordemDeServico;
+	}
 
 	public int getIdSituacao() {
 		return idSituacao;

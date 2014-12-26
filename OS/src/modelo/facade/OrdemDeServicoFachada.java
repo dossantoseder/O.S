@@ -12,7 +12,6 @@ public class OrdemDeServicoFachada {
 	OrdemDeServicoDAO ordemDeServicoDAO = new OrdemDeServicoDAO();
 	List<OrdemDeServico> ordemDeServicos = new ArrayList<OrdemDeServico>();
 
-
 	public void cadastrarOrdemDeServico(OrdemDeServico ordemDeServico) {
 		ordemDeServicoDAO.cadastrarOrdemDeServico(ordemDeServico);
 	}
@@ -25,18 +24,20 @@ public class OrdemDeServicoFachada {
 	}
 
 	public List<OrdemDeServico> getOrdemDeServicos() {
-		
-		ordemDeServicos = ordemDeServicoDAO.getListarOrdemDeServico();
-		
+
+		// ordemDeServicos = ordemDeServicoDAO.getListarOrdemDeServico();
+		ordemDeServicos = ordemDeServicoDAO.getListarOrdemDeServicoSituacao();
+
 		return ordemDeServicos;
 	}
 
 	public OrdemDeServico getOrdemDeServico(OrdemDeServico ordemDeServico) {
 		return null;
 	}
-	
+
 	public OrdemDeServico getOrdemDeServico(int idordemDeServico) {
-		ordemDeServico = ordemDeServicoDAO.getOrdemDeServico(idordemDeServico);
+		//ordemDeServico = ordemDeServicoDAO.getOrdemDeServico(idordemDeServico);
+		ordemDeServico = ordemDeServicoDAO.getOrdemDeServicoSolicitante(idordemDeServico);
 		return ordemDeServico;
 	}
 

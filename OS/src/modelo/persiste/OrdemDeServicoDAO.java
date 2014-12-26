@@ -19,6 +19,7 @@ public class OrdemDeServicoDAO {
 	EquipamentoDAO equipamentoDAO = new EquipamentoDAO();
 	GestorDAO gestorDAO = new GestorDAO();
 	SolicitanteDAO solicitanteDAO = new SolicitanteDAO();
+	SituacaoDAO situacaoDAO = new SituacaoDAO();
 	ResultSet rs;
 	List<OrdemDeServico> ordensDeServico;
 	static ConexaoSingleton bd = ConexaoSingleton.getInstance();
@@ -29,7 +30,8 @@ public class OrdemDeServicoDAO {
 
 	}
 
-	public void cadastrarOrdemDeServico(OrdemDeServico ordemDeServico) {
+	public OrdemDeServico cadastrarOrdemDeServico(OrdemDeServico ordemDeServico) {
+		ordemDeServico = new OrdemDeServico();
 		try {
 
 			stmt = con
@@ -43,12 +45,14 @@ public class OrdemDeServicoDAO {
 			stmt.setInt(5, ordemDeServico.getSolicitante().getIdUsuario());
 			// stmt.setString(7, ordemDeServico.getObs());
 			// stmt.setInt(8, ordemDeServico.getGestor().getIdUsuario());
-			bd.executarSQL(stmt);
+			int id = bd.executarSQLOS(stmt);
+			ordemDeServico = getOrdemDeServico(id);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return ordemDeServico;
 	}
 
 	public void atualizarOrdemDeServico(OrdemDeServico ordemDeServico) {
@@ -161,24 +165,35 @@ public class OrdemDeServicoDAO {
 		return ordemDeServico;
 	}
 
-	public OrdemDeServico getOrdemDeServicoSolicitante(int idordensDeServico) {
+	public OrdemDeServico getOrdemDeServicoSolicitante(int idordemDeServico) {
 		try {
 			stmt = con
-					.prepareStatement("select idordemdeservico, servico.idservico, setor.idsetor"
-							+ "  from ordemdeservico   inner join servico on servico.idservico ="
-							+ " ordemdeservico.idservico   inner join setor on setor.idsetor = "
-							+ "ordemdeservico.idsetor where idordemdeservico = ?");
-			stmt.setInt(1, idordensDeServico);
+					.prepareStatement("SELECT * FROM ordemdeservico inner join "
+							+ "situacao on situacao.idordemdeservico = ordemdeservico.idordemdeservico"
+							+ " where ordemdeservico.idordemdeservico = ?");
+			stmt.setInt(1, idordemDeServico);
 			rs = bd.executarBuscaSQL(stmt);
 
 			while (rs.next()) {
 				ordemDeServico = new OrdemDeServico();
 
 				ordemDeServico.setIdOrdemServico(rs.getInt("idordemdeservico"));
-				ordemDeServico.setServico(servicoDAO.getServico(rs
-						.getInt("idservico")));
-				ordemDeServico
-						.setSetor(setorDAO.getSetor(rs.getInt("idsetor")));
+				ordemDeServico.setDescricao(rs.getString("descricao"));
+				ordemDeServico.setObs(rs.getString("observacoes"));
+				ordemDeServico.setMotivoDevolucao(rs
+						.getString("motivodevolucao"));
+				Servico servico = servicoDAO.getServico(rs.getInt("idservico"));
+				ordemDeServico.setServico(servico);
+				Setor setor = setorDAO.getSetor(rs.getInt("idsetor"));
+				ordemDeServico.setSetor(setor);
+				Gestor gestor = gestorDAO.getGestor(rs.getInt("idgestor"));
+				ordemDeServico.setGestor(gestor);
+				Solicitante solicitante = solicitanteDAO.getSolicitante(rs
+						.getInt("idsolicitante"));
+				ordemDeServico.setSolicitante(solicitante);
+				Equipamento equipamento = equipamentoDAO.getEquipamento(rs
+						.getInt("idequipamento"));
+				ordemDeServico.setEquipamento(equipamento);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -186,10 +201,34 @@ public class OrdemDeServicoDAO {
 		}
 		return ordemDeServico;
 	}
-	/*
-	 * stmt = con .prepareStatement("update osordemservico " +
-	 * "set descricao = ?, idServico = ?, idSetor = ?, observacoes = ?, idequipamento =? "
-	 * + ",idGestor = ? ,idsolicitante = ?" + "where idosordemservico=?");
-	 */
+
+	public List<OrdemDeServico> getListarOrdemDeServicoSituacao() {
+		try {
+			stmt = con
+					.prepareStatement("SELECT * FROM bd_sgos.ordemdeservico ;");
+			rs = bd.executarBuscaSQL(stmt);
+			ordensDeServico = new ArrayList<OrdemDeServico>();
+
+			while (rs.next()) {
+				ordemDeServico = new OrdemDeServico();
+
+				ordemDeServico.setIdOrdemServico(rs.getInt("idordemdeservico"));
+				ordemDeServico.setServico(servicoDAO.getServico(rs
+						.getInt("idservico")));
+				ordemDeServico.setSituacao(situacaoDAO.getSituacaoOS(rs
+						.getInt("idordemdeservico")));
+				ordemDeServico.setGestor(gestorDAO.getGestor(rs
+						.getInt("idgestor")));
+				ordemDeServico
+						.setSetor(setorDAO.getSetor(rs.getInt("idsetor")));
+				ordensDeServico.add(ordemDeServico);
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ordensDeServico;
+	}
 
 }

@@ -53,14 +53,21 @@ public class LogarCommand extends HttpServlet implements Command {
 		if (usuarioLogado.equals(null)) {
 			req.setAttribute("erro", "erro");
 			req.getRequestDispatcher("/index.jsp").forward(req, res);
-		} else if (usuarioLogado.getTipo() == 1 || usuarioLogado.getTipo() == 2) {
-			  
+		} else if (usuarioLogado.getTipo() == 1) {
+
 			req.setAttribute("usuario", usuarioLogado);
 			req.setAttribute("listaos", getListaOS());
 			req.setAttribute("listastatus", getListaStatus());
 			req.setAttribute("listasetor", getListaSetor());
-			req.getRequestDispatcher("/listarOS_admegestor.jsp").forward(req,
-					res);
+			req.getRequestDispatcher("/listarOS_administrador.jsp").forward(
+					req, res);
+		} else if (usuarioLogado.getTipo() == 2) {
+
+			req.setAttribute("usuario", usuarioLogado);
+			req.setAttribute("listaos", getListaOS());
+			req.setAttribute("listastatus", getListaStatus());
+			req.setAttribute("listasetor", getListaSetor());
+			req.getRequestDispatcher("/listarOS_gestor.jsp").forward(req, res);
 		} else {
 			req.setAttribute("usuario", usuarioLogado);
 			req.setAttribute("listaos", getListaOSSolicitante(usuarioLogado));

@@ -30,12 +30,11 @@ public class OrdemDeServicoListaDadosCommand extends HttpServlet implements
 		SetorFachada setorFachada = new SetorFachada();
 		ServicoFachada servicoFachada = new ServicoFachada();
 		EquipamentoFachada equipamentoFachada = new EquipamentoFachada();
-		System.out.println("aqui");
 		req.setAttribute("listasol", solicitanteFachada.getListarSolicitante());
 		req.setAttribute("listaset", setorFachada.getListarSetor());
 		req.setAttribute("listaser", servicoFachada.getListarServico());
 		req.setAttribute("listaequi", equipamentoFachada.getListarEquipamento());
-		req.getRequestDispatcher("/cadastrarOS.jsp").forward(req, res);
+		req.getRequestDispatcher("/cadastrarOS_administrador.jsp").forward(req, res);
 
 	}
 

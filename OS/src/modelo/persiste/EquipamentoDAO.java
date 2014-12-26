@@ -105,7 +105,7 @@ public class EquipamentoDAO {
 				equipamento = new Equipamento();
 
 				equipamento.setIdEquipamento(rs.getInt("idequipamento"));
-				equipamento.setTombo(rs.getString("nomeequipamento"));
+				equipamento.setNomeEquipamento(rs.getString("nomeequipamento"));
 			}
 
 		} catch (SQLException e) {

@@ -64,10 +64,6 @@ public class ServicoDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (servico.equals(null))
-			System.out.println("A");
-		else
-			System.out.println("B");
 		return servico;
 	}
 

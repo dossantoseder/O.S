@@ -16,6 +16,7 @@ public class OrdemDeServico {
 	Solicitante solicitante;
 	Executor executor;
 	List<Situacao> situacoes;
+	Situacao situacao;
 
 	void cancelarOS() {
 
@@ -126,8 +127,16 @@ public class OrdemDeServico {
 		return situacoes;
 	}
 
-	public void setSituacao(Situacao situacao) {
+	public void setSituacoes(Situacao situacao) {
 		this.situacoes.add(situacao);
+	}
+
+	public Situacao getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(Situacao situacao) {
+		this.situacao = situacao;
 	}
 
 }

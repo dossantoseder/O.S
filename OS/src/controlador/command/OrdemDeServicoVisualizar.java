@@ -31,7 +31,6 @@ public class OrdemDeServicoVisualizar extends HttpServlet {
 
 	public void execute(HttpServletRequest req, HttpServletResponse res)
 			throws Exception {
-System.out.println("teste");
 		ordemDeServico = ordemDeServicoFacade.getOrdemDeServico(Integer.parseInt(req.getParameter("id")));
 		req.setAttribute("listaos", ordemDeServicos);
 		req.getRequestDispatcher("/VisualizarOSadmegestor.jsp").forward(req, res);

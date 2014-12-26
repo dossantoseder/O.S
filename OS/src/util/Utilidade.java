@@ -1,5 +1,9 @@
 package util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
 /**
  * Esta classe contém funções de utilidade. Ela possui funcionalidades \n
  * que podem ser utilizadas em diversos programas \n
@@ -24,7 +28,7 @@ public class Utilidade {
 	 * Implementa o system.out.println()
 	 * */
 	public static void SOP(String t){
-		System.out.println(t);
+		//System.out.println(t);
 	}
 	
 	/**
@@ -44,17 +48,31 @@ public class Utilidade {
 		switch (tipo){
 			case POP_UP_MENSAGEM_ERRO:{
 				if (titulo == null) titulo = "Erro";
-				System.out.println(titulo+" - "+msn);
+				//System.out.println(titulo+" - "+msn);
 				break;
 			} 
 			case POP_UP_MENSAGEM_INFORMACAO:{
 				if (titulo == null) titulo = "Informação";
-				System.out.println(titulo+" - "+msn);
+				//System.out.println(titulo+" - "+msn);
 				break;
 			} 
 		}
 		
 		
 	} 
+	
+	public String MostraData(){
+		Date data=new Date();
+		SimpleDateFormat dformatador = new SimpleDateFormat("dd/MM/yyyy");
+		String sData = dformatador.format(data);
+		return sData;
+	}
+    
+	public String MostraHora(){
+		Date data=new Date();
+		SimpleDateFormat dformatador=new SimpleDateFormat("hh:mm:ss");
+		String sData = dformatador.format(data);
+		return sData;
+	}
 
 }

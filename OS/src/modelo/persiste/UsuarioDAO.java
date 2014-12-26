@@ -72,6 +72,7 @@ public class UsuarioDAO {
 				usuario.setTipo(rs.getInt("idtipousuario"));
 				usuario.setLogin(rs.getString("login"));
 				usuario.setNomeUsuario(rs.getString("nomeusuario"));
+				usuario.setIdUsuario(rs.getInt("idusuario"));
 			}
 
 		} catch (SQLException e) {
@@ -97,6 +98,32 @@ public class UsuarioDAO {
 				usuario.setTipo(rs.getInt("idtipousuario"));
 				usuario.setLogin(rs.getString("login"));
 				usuario.setSenha(rs.getString("senha"));
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return usuario;
+	}
+
+	public Usuario getUsuarioID(int idUsuario) {
+
+		try {
+			stmt = con.prepareStatement("SELECT * FROM usuario "
+					+ " where idusuario = ? ");
+
+			stmt.setInt(1, idUsuario);
+			rs = bd.executarBuscaSQL(stmt);
+			if (rs.next()) {
+
+				usuario = new Usuario();
+
+				usuario.setTipo(rs.getInt("idtipousuario"));
+				usuario.setLogin(rs.getString("login"));
+				usuario.setSenha(rs.getString("senha"));
+				usuario.setIdUsuario(rs.getInt("idusuario"));
 			}
 
 		} catch (SQLException e) {

@@ -36,7 +36,7 @@ public class SituacaoFachada {
 
 	public List<Situacao> getListaSituacaoSolicitante(Usuario usuario) {
 
-		situacoes = situacaoDAO.getSituacaoOSSolicitante(usuario);
+		//situacoes = situacaoDAO.getSituacaoOSSolicitante(usuario);
 
 		return situacoes;
 

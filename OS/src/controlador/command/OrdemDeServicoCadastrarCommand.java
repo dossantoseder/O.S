@@ -1,11 +1,5 @@
 package controlador.command;
 
-import java.io.IOException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +35,6 @@ public class OrdemDeServicoCadastrarCommand extends HttpServlet implements Comma
 	String msg;
     public OrdemDeServicoCadastrarCommand() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	@Override
@@ -77,10 +70,7 @@ public class OrdemDeServicoCadastrarCommand extends HttpServlet implements Comma
 		//ordemDeServico.setSituacao(situacaoFachada.getSituacao(Integer.parseInt(situacao)));
 		
 		ordemDeServicoFacade.cadastrarOrdemDeServico(ordemDeServico);
-		
 		msg = "Ordem de Serviço cadastrada com sucesso";
-		
-		//msg(req, res, msg);
 
 	}
 
