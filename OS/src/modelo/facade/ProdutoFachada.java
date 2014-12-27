@@ -10,27 +10,21 @@ public class ProdutoFachada {
 	ProdutoDAO produtoDAO = new ProdutoDAO();
 	List<Produto> produtos;
 
-	/*
-	 * private static EquipamentoFacade equipamentoFacade = null;
-	 * 
-	 * 
-	 * public static EquipamentoFacade getInstance() { if (equipamentoFacade ==
-	 * null) { equipamentoFacade = new EquipamentoFacade(); } return
-	 * equipamentoFacade; }
-	 */
+	public void cadastrarProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	public void atualizarProduto(Produto produto) {
+		this.produto = produto;
+	}
 
 	public List<Produto> getListarProduto() {
-
 		produtos = produtoDAO.getListarProduto();
-
 		return produtos;
-
 	}
 
 	public Produto getProduto(int idProduto) {
-
 		produto = produtoDAO.getProduto(idProduto);
-
 		return produto;
 	}
 

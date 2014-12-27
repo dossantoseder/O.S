@@ -9,29 +9,22 @@ public class EquipamentoFachada {
 	Equipamento equipamento;
 	EquipamentoDAO equipamentoDAO = new EquipamentoDAO();
 	List<Equipamento> equipamentos;
-	/*private static EquipamentoFacade equipamentoFacade = null;
 
+	public void cadastrarEquipamento(Equipamento equipamento) {
+		this.equipamento = equipamento;
+	}
 
-	public static EquipamentoFacade getInstance() {
-		if (equipamentoFacade == null) {
-			equipamentoFacade = new EquipamentoFacade();
-		}
-		return equipamentoFacade;
-	}*/
+	public void atualizarEquipamento(Equipamento equipamento) {
+		this.equipamento = equipamento;
+	}
 
-	
 	public List<Equipamento> getListarEquipamento() {
-
 		equipamentos = equipamentoDAO.getListarEquipamento();
-
 		return equipamentos;
-
 	}
 
 	public Equipamento getEquipamento(int idEquipamento) {
-
 		equipamento = equipamentoDAO.getEquipamento(idEquipamento);
-
 		return equipamento;
 	}
 

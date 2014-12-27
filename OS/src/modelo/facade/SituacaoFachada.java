@@ -10,36 +10,24 @@ public class SituacaoFachada {
 	SituacaoDAO situacaoDAO = new SituacaoDAO();
 	List<Situacao> situacoes;
 
-	/*
-	 * private static EquipamentoFacade equipamentoFacade = null;
-	 * 
-	 * 
-	 * public static EquipamentoFacade getInstance() { if (equipamentoFacade ==
-	 * null) { equipamentoFacade = new EquipamentoFacade(); } return
-	 * equipamentoFacade; }
-	 */
+	public void cadastrarSituacao(Situacao situacao) {
+		this.situacao = situacao;
+	}
 
 	public List<Situacao> getListarSituacao() {
-
 		situacoes = situacaoDAO.getListarSituacao();
-
 		return situacoes;
-
 	}
 
 	public Situacao getSituacao(int idSituacao) {
-
 		situacao = situacaoDAO.getSituacao(idSituacao);
-
 		return situacao;
 	}
 
 	public List<Situacao> getListaSituacaoSolicitante(Usuario usuario) {
-
-		//situacoes = situacaoDAO.getSituacaoOSSolicitante(usuario);
-
+		// situacoes = situacaoDAO.getSituacaoOSSolicitante(usuario);
 		return situacoes;
-
 	}
 
 }
+
