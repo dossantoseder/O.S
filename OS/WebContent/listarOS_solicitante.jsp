@@ -28,7 +28,7 @@
     <%@ include file = "cabecalho_solicitante.jsp" %> 
         
         
-     Login: ${param.login}.
+     Login: ${param.nome}.
      
      
 
@@ -43,7 +43,7 @@
             method="post">
             <ul>
            <div id="bar2">    
-            <div id="divbar2"><h2>Ordens de ServiÃ§o</h2></div>  
+            <div id="divbar2"><h2>Ordens de Serviço</h2></div>  
             
             <div id="formbar">
                 <label for="data">Data Inicial:</label>
@@ -78,7 +78,7 @@
     <table>
         
         <tr>
-          <th>Tipo de ServiÃ§o</th>
+          <th>Tipo de Serviço</th>
           <th>Status</th>
           <th>Data</th>
           <th>Setor</th>
