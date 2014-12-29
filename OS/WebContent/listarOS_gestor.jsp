@@ -44,7 +44,7 @@
     <%@ include file = "cabecalho_gestor.jsp" %>    
         
         
-  {$usuario.nomeUsuario}   
+   
 
         
     <div id="main">
@@ -69,19 +69,21 @@
            
              <div id="formbar2">
                 <label for="data">Status:</label>
-	                <select id="inputstatus" class="field1">
+	                <select style="width:150px" id="inputstatus" class="field1">
+	                <option selected="selected"></option>
 	                <%for(Status status : listaStatus){%>
 
-            <option selected="selected" value="<%=status.getIdStatus()%>"><%=status.getNomeStatus()%></option>
+            <option value="<%=status.getIdStatus()%>"><%=status.getNomeStatus()%></option>
 
          <%}%>
 	                </select>
                 <br>            
                 <label for="data">Setor:</label>
-	                <select id="inputsetor" class="field1">
+	                <select style="width:150px" id="inputsetor" class="field1">
+	                <option selected="selected"></option>
 	                <%for(Setor s : setores){%>
 
-            <option selected="selected" value="<%=s.getIdSetor()%>"><%=s.getNomeSetor()%></option>
+            <option value="<%=s.getIdSetor()%>"><%=s.getNomeSetor()%></option>
 
          <%}%>
 	                </select>
