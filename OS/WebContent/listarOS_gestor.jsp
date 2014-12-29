@@ -63,7 +63,7 @@
                 <label for="data">Data Inicial:&nbsp;</label>
                 <input name="dataInicial" type="date" />
                 <br>
-                <label for="data">Data &nbsp;Final:&nbsp;</label> 
+                <label for="data">Data &nbsp;Final:&nbsp;&nbsp;</label> 
                 <input name="dataFinal" type="date" />               
            </div>
            
@@ -78,7 +78,7 @@
          <%}%>
 	                </select>
                 <br>            
-                <label for="data">Setor:</label>
+                <label for="data">Setor:&nbsp;</label>
 	                <select style="width:150px" id="inputsetor" class="field1">
 	                <option selected="selected"></option>
 	                <%for(Setor s : setores){%>

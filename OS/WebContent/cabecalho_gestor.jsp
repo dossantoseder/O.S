@@ -18,7 +18,7 @@
             <div id="img"><img src="imagens/logo.png"></div>
 	         <%//Usuario usuario=(Usuario)session.getAttribute("usuario");%> 
          
-         <div id="NomeDoUsuario"> ${param.nome}<%//= usuario.getNomeUsuario()%></div>   
+         <div id="NomeDoUsuario"><%//= usuario.getNomeUsuario()%></div>   
 	        <div id="sair"> <a href="index.jsp" >Sair</a></div>
   
 	        

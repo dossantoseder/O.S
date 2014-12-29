@@ -14,6 +14,9 @@
     <servlet-name>Controlador</servlet-name>
     <url-pattern>*.Controlador</url-pattern>
   </servlet-mapping>
+  <session-config>
+        <session-timeout>3</session-timeout> 
+   </session-config>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>

@@ -18,8 +18,8 @@
 	setores = (List<Setor>) request.getAttribute("listasetor");
 	List<Status> listaStatus;
 	listaStatus = (List<Status>) request.getAttribute("listastatus");
-	Usuario u = (Usuario) request.getAttribute("usuario");
-	request.setAttribute("usuario", u);
+//	Usuario u = (Usuario) request.getAttribute("usuario");
+	//request.setAttribute("usuario", u);
 %>
 <html>
 <head>
@@ -62,28 +62,33 @@ body {
 					<div id="formbar">
 						<label for="data">Data Inicial:&nbsp;</label> <input
 							name="dataInicial" type="date" /> <br> <label for="data">Data
-								&nbsp;Final:&nbsp;</label> <input name="dataFinal" type="date" />
+								&nbsp;Final:&nbsp;&nbsp;</label> <input name="dataFinal" type="date" />
 					</div>
 
 					<div id="formbar2">
-						<label for="data">Status:</label> <select id="inputstatus"
-							class="field1">
+						<label for="data">Status:</label>
+						 <select  style="width:150px"  id="inputstatus"	class="field1">
+							
+							<option selected="selected"> </option>
 							<%
 								for (Status status : listaStatus) {
 							%>
 
-							<option selected="selected" value="<%=status.getIdStatus()%>"><%=status.getNomeStatus()%></option>
+							<option style="width:150px"  value="<%=status.getIdStatus()%>"><%=status.getNomeStatus()%></option>
 
 							<%
 								}
 							%>
-						</select> <br> <label for="data">Setor:</label> <select
-							id="inputsetor" class="field1">
+						</select>
+						
+						 <br> <label for="data">Setor:&nbsp;</label>
+						 <select  style="width:150px" 	id="inputsetor" class="field1">
+							<option selected="selected"> </option>
 								<%
 									for (Setor s : setores) {
 								%>
 
-								<option selected="selected" value="<%=s.getIdSetor()%>"><%=s.getNomeSetor()%></option>
+								<option  value="<%=s.getIdSetor()%>"><%=s.getNomeSetor()%></option>
 
 								<%
 									}
@@ -128,17 +133,14 @@ body {
 																	<%=o.getServico().getNomeServico()%></a></td>
 
 															<td><%=o.getSituacao().getStatus().getNomeStatus()%></td>
-															<td><%=o.getSituacao().getDataOS()%></td>
+															<td><%//=o.getSituacao().getDataOS()%></td>
 															<td><%=o.getGestor().getNomeUsuario()%></td>
 															<td><%=o.getSetor().getNomeSetor()%></td>
 														</tr>
 
-														<%
-															}
-														%>
-														<%
-															}
-														%>
+														<%}%>
+														<%}%>
+														
 													</table>
 													</li>
 
