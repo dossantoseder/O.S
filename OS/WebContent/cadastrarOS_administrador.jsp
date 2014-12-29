@@ -18,8 +18,8 @@
 		<link href="listarOS.css" type="text/css" rel="stylesheet" />
 </head>
 
-<%
-	List<Usuario> sols;
+ 
+<%	List<Usuario> sols;
 	sols = (List<Usuario>) request.getAttribute("listasol");
 	List<Setor> setores;
 	setores = (List<Setor>) request.getAttribute("listaset");
@@ -27,7 +27,8 @@
 	servs = (List<Servico>) request.getAttribute("listaser");
 	List<Equipamento> equis;
 	equis = (List<Equipamento>) request.getAttribute("listaequi");
-%>
+	%>
+
 <style>
 body {
 	background-image: url("imagens/branco.png");
