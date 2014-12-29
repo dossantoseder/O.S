@@ -109,9 +109,9 @@ public class OrdemDeServicoDAO {
 				ordemDeServico.setMotivoDevolucao(rs
 						.getString("motivodevolucao"));
 				ordemDeServico.setServico(servicoDAO.getServico(rs
-						.getInt("idservico")));
-				ordemDeServico
-						.setSetor(setorDAO.getSetor(rs.getInt("idsetor")));
+						.getInt("idtiposervico")));
+				ordemDeServico.setSetor(setorDAO.getSetor(rs
+						.getInt("idsetor")));
 				ordemDeServico.setEquipamento(equipamentoDAO.getEquipamento(rs
 						.getInt("idequipamento")));
 				ordemDeServico.setGestor(gestorDAO.getGestor(rs
@@ -205,7 +205,7 @@ public class OrdemDeServicoDAO {
 	public List<OrdemDeServico> getListarOrdemDeServicoSituacao() {
 		try {
 			stmt = con
-					.prepareStatement("SELECT * FROM bd_sgos.ordemdeservico ;");
+					.prepareStatement("SELECT * FROM ordemdeservico ;");
 			rs = bd.executarBuscaSQL(stmt);
 			ordensDeServico = new ArrayList<OrdemDeServico>();
 
@@ -214,7 +214,7 @@ public class OrdemDeServicoDAO {
 
 				ordemDeServico.setIdOrdemServico(rs.getInt("idordemdeservico"));
 				ordemDeServico.setServico(servicoDAO.getServico(rs
-						.getInt("idservico")));
+						.getInt("idtiposervico")));
 				ordemDeServico.setSituacao(situacaoDAO.getSituacaoOS(rs
 						.getInt("idordemdeservico")));
 				ordemDeServico.setGestor(gestorDAO.getGestor(rs

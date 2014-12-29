@@ -69,7 +69,7 @@ public class UsuarioDAO {
 
 				usuario = new Usuario();
 
-				usuario.setTipo(rs.getInt("idtipousuario"));
+				usuario.setTipo(rs.getInt("tipo"));
 				usuario.setLogin(rs.getString("login"));
 				usuario.setNomeUsuario(rs.getString("nomeusuario"));
 				usuario.setIdUsuario(rs.getInt("idusuario"));

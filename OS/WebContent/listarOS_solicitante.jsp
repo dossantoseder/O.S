@@ -28,7 +28,7 @@
     <%@ include file = "cabecalho_solicitante.jsp" %> 
         
         
-     Login: ${param.nome}.
+     
      
      
 

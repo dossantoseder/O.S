@@ -49,15 +49,15 @@ public class ServicoDAO {
 		ResultSet rs = null;
 		try {
 			stmt = con
-					.prepareStatement("select * from servico where idservico= ?");
+					.prepareStatement("select * from tiposervico where idtiposervico= ?");
 			stmt.setInt(1, id);
 			rs = bd.executarBuscaSQL(stmt);
 
 			while (rs.next()) {
 				servico = new Servico();
 
-				servico.setIdServico(rs.getInt("idservico"));
-				servico.setNomeServico(rs.getString("nomeservico"));
+				servico.setIdServico(rs.getInt("idtiposervico"));
+				servico.setNomeServico(rs.getString("nometiposervico"));
 			}
 
 		} catch (SQLException e) {
