@@ -23,7 +23,8 @@ public class ProdutoDAO {
 
 	}
 
-	public void cadastrarProduto(Produto produto) {
+	public int cadastrarProduto(Produto produto) {
+		int SEM_ERRO = -1;
 		try {
 
 			stmt = con
@@ -32,15 +33,17 @@ public class ProdutoDAO {
 			stmt.setString(1, produto.getNomeProduto());
 			stmt.setString(2, produto.getDescricao());
 			stmt.setInt(3, produto.getNumeroProcesso());
-			bd.executarSQL(stmt);
+			SEM_ERRO = bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return SEM_ERRO;
 	}
 
-	public void atualizarProduto(Produto produto) {
+	public int atualizarProduto(Produto produto) {
+		int SEM_ERRO = -1;
 		try {
 
 			stmt = con
@@ -52,26 +55,29 @@ public class ProdutoDAO {
 			stmt.setInt(3, produto.getNumeroProcesso());
 			stmt.setInt(4, produto.getIdProduto());
 
-			bd.executarSQL(stmt);
+			SEM_ERRO = bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return SEM_ERRO;
 	}
 
-	public void excluirSetor(int idProduto) {
+	public int excluirSetor(int idProduto) {
+		int SEM_ERRO = -1;
 		try {
 
 			stmt = con
 					.prepareStatement("delete from produto where idproduto = ?");
 			stmt.setInt(1, idProduto);
-			bd.executarSQL(stmt);
+			SEM_ERRO = bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return SEM_ERRO;
 	}
 
 	public List<Produto> getListarProduto() {

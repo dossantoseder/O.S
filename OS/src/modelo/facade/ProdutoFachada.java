@@ -10,12 +10,14 @@ public class ProdutoFachada {
 	ProdutoDAO produtoDAO = new ProdutoDAO();
 	List<Produto> produtos;
 
-	public void cadastrarProduto(Produto produto) {
-		this.produto = produto;
+	public int cadastrarProduto(Produto produto) {
+		int SEM_ERRO = this.produtoDAO.cadastrarProduto(produto);
+		return SEM_ERRO;
 	}
 
-	public void atualizarProduto(Produto produto) {
-		this.produto = produto;
+	public int atualizarProduto(Produto produto) {
+		int SEM_ERRO = this.produtoDAO.atualizarProduto(produto);
+		return SEM_ERRO;
 	}
 
 	public List<Produto> getListarProduto() {

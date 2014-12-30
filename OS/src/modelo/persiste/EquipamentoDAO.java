@@ -23,52 +23,59 @@ public class EquipamentoDAO {
 
 	}
 
-	public void cadastrarEquipamento(Equipamento equipamento) {
+	public int cadastrarEquipamento(Equipamento equipamento) {
+		int SEM_ERRO = -1;
 		try {
 
 			stmt = con
-					.prepareStatement("insert into equipamento(tombo,idtipoequipamento) values(?,?)");
+					.prepareStatement("insert into equipamento(nomeequipamento, tombo) values(?,?)");
 
-			stmt.setString(1, equipamento.getTombo());
-			stmt.setInt(2, equipamento.getTipoDeEquipamento()
-					.getIdTipoDeEquipamento());
-			bd.executarSQL(stmt);
+			stmt.setString(1, equipamento.getNomeEquipamento());
+			stmt.setString(2, equipamento.getTombo());
+			SEM_ERRO = bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return SEM_ERRO;
 	}
 
-	public void atualizarEquipamento(Equipamento equipamento) {
+	public int atualizarEquipamento(Equipamento equipamento) {
+		int SEM_ERRO = -1;
 		try {
 
 			stmt = con
-					.prepareStatement("update equipamento set tombo = ?, idtipoequipamento = ? "
+					.prepareStatement("update equipamento set nomeequipamento = ?, tombo = ?, idtipoequipamento = ? "
 							+ "where idequipamento=?");
 
-			stmt.setString(1, equipamento.getTombo());
+			stmt.setString(1, equipamento.getNomeEquipamento());
+			stmt.setString(2, equipamento.getTombo());
+			stmt.setInt(1, equipamento.getIdEquipamento());
 
-			bd.executarSQL(stmt);
+			SEM_ERRO = bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return SEM_ERRO;
 	}
 
-	public void excluirSetor(int idEquipamento) {
+	public int excluirSetor(int idEquipamento) {
+		int SEM_ERRO = -1;
 		try {
 
 			stmt = con
 					.prepareStatement("delete from equipamento where idequipamento = ?");
 			stmt.setInt(1, idEquipamento);
-			bd.executarSQL(stmt);
+			SEM_ERRO = bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return SEM_ERRO;
 	}
 
 	public List<Equipamento> getListarEquipamento() {
@@ -98,7 +105,7 @@ public class EquipamentoDAO {
 			stmt = con
 					.prepareStatement("select * from equipamento where idequipamento= ?");
 			stmt.setInt(1, id);
-			rs  = bd.executarBuscaSQL(stmt);
+			rs = bd.executarBuscaSQL(stmt);
 
 			while (rs.next()) {
 

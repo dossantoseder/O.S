@@ -4,7 +4,7 @@ public class Equipamento {
 	public int idEquipamento;
 	public String tombo;
 	public String nomeEquipamento;
-	public TipoDeEquipamento tipoDeEquipamento;
+	//public TipoDeEquipamento tipoDeEquipamento;
 
 	public int getIdEquipamento() {
 		return idEquipamento;
@@ -22,13 +22,13 @@ public class Equipamento {
 		this.tombo = tombo;
 	}
 
-	public TipoDeEquipamento getTipoDeEquipamento() {
+	/*public TipoDeEquipamento getTipoDeEquipamento() {
 		return tipoDeEquipamento;
 	}
 
 	public void setTipoDeEquipamento(TipoDeEquipamento tipoDeEquipamento) {
 		this.tipoDeEquipamento = tipoDeEquipamento;
-	}
+	}*/
 
 	public String getNomeEquipamento() {
 		return nomeEquipamento;
