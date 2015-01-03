@@ -10,12 +10,14 @@ public class EquipamentoFachada {
 	EquipamentoDAO equipamentoDAO = new EquipamentoDAO();
 	List<Equipamento> equipamentos;
 
-	public void cadastrarEquipamento(Equipamento equipamento) {
-		this.equipamento = equipamento;
+	public int cadastrarEquipamento(Equipamento equipamento) {
+		int SEM_ERRO = this.equipamentoDAO.cadastrarEquipamento(equipamento);
+		return SEM_ERRO;
 	}
 
-	public void atualizarEquipamento(Equipamento equipamento) {
-		this.equipamento = equipamento;
+	public int atualizarEquipamento(Equipamento equipamento) {
+		int SEM_ERRO = this.equipamentoDAO.atualizarEquipamento(equipamento);
+		return SEM_ERRO;
 	}
 
 	public List<Equipamento> getListarEquipamento() {

@@ -10,15 +10,15 @@ public class StatusFachada {
 	StatusDAO statusDAO = new StatusDAO();
 	List<Status> listaStatus;
 
-	/*
-	 * private static EquipamentoFacade equipamentoFacade = null;
-	 * 
-	 * 
-	 * public static EquipamentoFacade getInstance() { if (equipamentoFacade ==
-	 * null) { equipamentoFacade = new EquipamentoFacade(); } return
-	 * equipamentoFacade; }
-	 */
+	public int cadastrarStatus(Status status) {
+		int SEM_ERRO = this.statusDAO.cadastrarStatus(status);
+		return SEM_ERRO;
+	}
 
+	public int atualizarStatus(Status status) {
+		int SEM_ERRO = this.statusDAO.atualizarStatus(status);
+		return SEM_ERRO;
+	}
 	public List<Status> getListarStatus() {
 
 		listaStatus = statusDAO.getListarStatus();
