@@ -132,6 +132,7 @@ and open the template in the editor.
         
         
     #rodape{
+    		background-image:  url("imagens/linhabranca.png");
             text-align: center;
             font-family: 'Courier New' , Courier, monospace;
             font-style: normal;
@@ -314,3 +315,16 @@ and open the template in the editor.
 			height: 25px;
 			background: #02338d;
 		}
+		#e1{
+			position: absolute;
+			left: 300px;
+			margin-top: 4px;
+		
+		}					
+					
+		#e2{
+			position: absolute;
+			left: 300px;
+			margin-top: 4px;
+		
+		}		

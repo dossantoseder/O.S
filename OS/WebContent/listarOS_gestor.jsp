@@ -141,9 +141,12 @@
 </div>
         
         
-   <br><br><br><br><br><br><br><br>
         
   </div>
-  <%@ include file = "rodape.jsp" %>             
+   <br><br><br><br><br><br><br><br>
+  
+  <div>
+  <%@ include file = "rodape.jsp" %>
+  </div>             
 </body>     
 </html>

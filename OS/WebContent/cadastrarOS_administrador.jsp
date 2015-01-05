@@ -127,7 +127,7 @@ body {
 																						Descrição: </label>
 																			</strong> <textarea id="l9" name="descricao" cols="60"
 																					rows="10">
-				  </textarea> <br><br>
+				  																</textarea> <br><br>
 											</div>
 
 
