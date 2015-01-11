@@ -87,7 +87,7 @@ public class StatusDAO {
 				status = new Status();
 				
 				status.setIdStatus(rs.getInt("idstatus"));
-				status.setNomeStatus(rs.getString("descricao"));
+				status.setNomeStatus(rs.getString("nomestatus"));
 				listaStatus.add(status);
 				
 			}

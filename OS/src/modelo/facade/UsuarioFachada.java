@@ -2,18 +2,20 @@ package modelo.facade;
 
 import java.util.List;
 
+import modelo.Setor;
 import modelo.Usuario;
 import modelo.persiste.UsuarioDAO;
 
 public class UsuarioFachada {
 
 	Usuario usuario;
-	List<Usuario> Usuarios;
+	List<Usuario> usuarios;
 	UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-	public void cadastrarUsuario(Usuario usuario) {
-		usuarioDAO.cadastrarUsuario(usuario);
-
+	public int  cadastrarUsuario(Usuario usuario) {
+		int valida = -1;
+		valida = usuarioDAO.cadastrarUsuario(usuario);
+		return valida;
 	}
 
 	public void atualizarUsuario(Usuario usuario) {
@@ -41,6 +43,12 @@ public class UsuarioFachada {
 	public void listaUsuarios() {
 		usuarioDAO.listaUsuarios();
 
+	}
+	
+
+	public List<Usuario> getListarUsuario() {
+		usuarios = usuarioDAO.getListarUsuario();
+		return usuarios;
 	}
 
 	public Usuario autenticarUsuario(Usuario user) {

@@ -52,7 +52,7 @@
   <br><br><br><br>     
   <br><br><br><br>      
         
-	<form id="form2"  method="post" action="">  
+	<form id="form2"  action="Servlet.Controlador" method="post">  
   	
   	
   	

@@ -14,9 +14,9 @@ public class ProdutoCadastrarCommand implements Command {
 		ProdutoFachada fachadaPRO = new ProdutoFachada();
 		Produto produto = new Produto();
 
-		String nomeProduto = req.getParameter("nomeProduto");
+		String nomeProduto = req.getParameter("nome_produto");
 		String descricao = req.getParameter("descricao");
-		String numeroProcesso = req.getParameter("numeroProcesso");
+		String numeroProcesso = req.getParameter("numero_processo");
 
 		produto.setNomeProduto(nomeProduto);
 		produto.setDescricao(descricao);

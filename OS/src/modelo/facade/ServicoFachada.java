@@ -10,15 +10,24 @@ public class ServicoFachada {
 	Servico servico;
 	ServicoDAO servicoDAO = new ServicoDAO();
 	List<Servico> servicos;
+	
+	
+	public int cadastrarServico(Servico servico) {
+		int valida = -1;
+		valida = servicoDAO.cadastrarServico(servico);
+		return valida;
 
-	/*
-	 * private static EquipamentoFacade equipamentoFacade = null;
-	 * 
-	 * 
-	 * public static EquipamentoFacade getInstance() { if (equipamentoFacade ==
-	 * null) { equipamentoFacade = new EquipamentoFacade(); } return
-	 * equipamentoFacade; }
-	 */
+	}
+
+	public void atualizarServico(Servico servico) {
+		servicoDAO.atualizarServico(servico);
+
+	}
+
+	public void excluirServico(Servico servico) {
+		servicoDAO.excluirServico(servico);
+
+	}
 
 	public List<Servico> getListarServico() {
 

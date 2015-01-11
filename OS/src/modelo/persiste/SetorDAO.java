@@ -23,29 +23,31 @@ public class SetorDAO {
 
 	}
 
-	public void cadastrarSetor(Setor setor) {
+	public int  cadastrarSetor(Setor setor) {
+		int valida = -1;
 		try {
 
 			stmt = con
-					.prepareStatement("insert into setor(secretaria) values(?)");
-
-			stmt.setString(1, setor.nomeSetor);
-			bd.executarSQL(stmt);
+					.prepareStatement("insert into setor(nomesetor) values(?)");
+			
+			stmt.setString(1, setor.getNomeSetor());
+			
+			valida = bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return valida;
 	}
 
 	public void atualizarSetor(Setor setor) {
 		try {
 
-			stmt = con.prepareStatement("update secretaria set nomesetor = ?"
+			stmt = con.prepareStatement("update setor set nomesetor = ?"
 					+ "where idsetor=?");
 
 			stmt.setString(1, setor.getNomeSetor());
-			stmt.setInt(2, setor.getIdSetor());
 
 			bd.executarSQL(stmt);
 
@@ -55,11 +57,11 @@ public class SetorDAO {
 		}
 	}
 
-	public void excluirSetor(int idSetor) {
+	public void excluirSetor(Setor setor) {
 		try {
 
 			stmt = con.prepareStatement("delete from setor where idsetor=?");
-			stmt.setInt(1, idSetor);
+			stmt.setInt(1, setor.getIdSetor());
 			bd.executarSQL(stmt);
 
 		} catch (SQLException e) {

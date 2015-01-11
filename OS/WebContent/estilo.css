@@ -328,3 +328,10 @@ and open the template in the editor.
 			margin-top: 4px;
 		
 		}		
+		
+		#mensagem{
+			position: absolute;
+			left: 300px;
+			margin-top: 40px;
+		
+		}	

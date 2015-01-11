@@ -23,9 +23,9 @@
   
 	        
 
-            <div id="menuOrdensDeServico"><a href="listarOS_administrador.jsp" >Ordens de Serviço</a>&nbsp;&nbsp;</div>
+            <div id="menuOrdensDeServico"><a href="Servlet.Controlador?controlador=OrdemDeServicoListaCommand&id=1">Ordens de Serviço</a>&nbsp;&nbsp;&nbsp;</div>
             <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
-            <div id="menuCadastrarOs"><a href="cadastrarOS_administrador.jsp" >Cadastrar OS</a>&nbsp;&nbsp;</div>
+            <div id="menuCadastrarOs"><a href="Servlet.Controlador?controlador=OrdemDeServicoListaDadosCommand&id=1">Cadastrar OS</a></div>
             <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
             <div id="menuCadastrarOs"><a href="cadastrarEquipamento_administrador.jsp" >Equipamento</a>&nbsp;&nbsp;</div>
             <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
@@ -33,7 +33,7 @@
             <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
             <div id="menuCadastrarOs"><a href="cadastrarSetor_administrador.jsp" >Setor</a>&nbsp;&nbsp;</div>
             <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
-            <div id="menuCadastrarOs"><a href="cadastrarServico_administrador.jsp" >Tipo de Serviço</a>&nbsp;&nbsp;</div>
+            <div id="menuCadastrarOs"><a href="cadastrarTipoServico_administrador.jsp" >Tipo de Serviço</a>&nbsp;&nbsp;</div>
             
             </div>
         </div>

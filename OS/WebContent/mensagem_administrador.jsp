@@ -11,13 +11,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <title>CADASTRAR SETOR</title>
+        <title>MENSAGEM</title>
         <link rel="stylesheet" type="text/css" href="view.css" media="all">
        <link href="estilo.css" type="text/css" rel="stylesheet" />
        <link href="listarOS.css" type="text/css" rel="stylesheet" />
     </head>
-    
-  
+    <%
+    String msg = (String) request.getAttribute("msg");
+    %>
+ 
     <style>
     	body{
 	    	background-image: url("imagens/branco.png");
@@ -26,7 +28,7 @@
     	}
     </style>
     <body>
-    <%@ include file = "cabecalho_administrador.jsp" %>       
+    <%@ include file = "cabecalho_gestor.jsp" %>       
         
      
 
@@ -34,41 +36,39 @@
     <div id="main">
        
            <div id="bar2">    
-            <div id="divbar2"><h2>Novo Setor</h2></div>  
+            <div id="divbar2"><h2>Mensagem</h2></div>  
            </div>
 
-
+		<div>
+			<label id="mensagem" style="margin-left: 100px; margin-top: 100px">
+				<%=msg%>
+			</label>
+		</div>
         
   <br><br><br><br>     
   <br><br><br><br>      
         
 	<form id="form2"  action="Servlet.Controlador" method="post">  
   	
-		<div class="itens" >
-	
-		<!--================================-->	
-				<strong>
-					<label class="itens">
-						Nome: 
-					</label>	
-				</strong> 
-			
-			 	 <input type="text" name="nome_setor"  class="itens_valor" id="e1" style="width: 440px">
-			 	 <br><br>
+  	
+  
+        
+        
+		
+		
+		
+				<div id="dbotoes">
 
-		<div id="dbotoes">
-			<div id="dcadastrar">		
-			  <input type="hidden" name="controlador" value="SetorCadastrarCommand"/>
-	          <input id="btcadastrar" type="image" name="botao" src="imagens/btcadastrar.png"> 
-	        </div>
 	        
 	        <div id="dcancelar">  
-	          <input type="hidden" name="controlador" value="SetorCadastrarCommand"/>
+	          <input type="hidden" name="controlador" value="OrdemDeServicoListaCommand"/>
 	          <input id="btcancelar" type="image" name="botao" src="imagens/btcancelar.png">
 	        </div>	          
 		</div>
-		
 </form>
+
+
+
 
 
 
@@ -78,9 +78,9 @@
 
         
         
-  </div>
    <br><br>
         
+  </div>
   <%@ include file = "rodape.jsp" %>             
 </body>     
 </html>

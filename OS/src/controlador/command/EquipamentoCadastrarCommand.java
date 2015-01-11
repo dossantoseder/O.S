@@ -13,7 +13,7 @@ public class EquipamentoCadastrarCommand implements Command {
 			throws Exception {
 
 		String tombo = req.getParameter("tombo");
-		String nomeEquipamento = req.getParameter("nomeEquipamento");
+		String nomeEquipamento = req.getParameter("nome_equipamento");
 
 		EquipamentoFachada fachadaEQUI = new EquipamentoFachada();
 		Equipamento equipamento = new Equipamento();
@@ -24,7 +24,7 @@ public class EquipamentoCadastrarCommand implements Command {
 		int SEM_ERRO = fachadaEQUI.cadastrarEquipamento(equipamento);
 
 		req.setAttribute("SEM_ERRO", SEM_ERRO);
-		req.getRequestDispatcher("/cadastrar_equipamento.jsp")
+		req.getRequestDispatcher("/cadastrarEquipamento_administrador.jsp")
 				.forward(req, res);
 
 	}

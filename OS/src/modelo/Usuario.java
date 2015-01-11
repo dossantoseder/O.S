@@ -12,6 +12,7 @@ public class Usuario implements HashSenha {
 	private String nomeUsuario;
 	private String login;
 	private String senha;
+	private String senhaConfirmacao;
 	private int tipo;
 
 	public int getIdUsuario() {
@@ -64,6 +65,14 @@ public class Usuario implements HashSenha {
 			ns.printStackTrace();
 			return senha;
 		}
+	}
+
+	public String getSenhaConfirmacao() {
+		return senhaConfirmacao;
+	}
+
+	public void setSenhaConfirmacao(String senhaConfirmacao) {
+		this.senhaConfirmacao =  this.encriptaSenha(senhaConfirmacao);
 	}
 
 }

@@ -27,6 +27,9 @@
 	servs = (List<Servico>) request.getAttribute("listaser");
 	List<Equipamento> equis;
 	equis = (List<Equipamento>) request.getAttribute("listaequi");
+	
+	String semErro = (String) request.getAttribute("SEM_ERRO");
+	
 	%>
 
 <style>
@@ -40,7 +43,11 @@ body {
 	<%@ include file="cabecalho_administrador.jsp"%>
 
 
-
+<%if(semErro=="0"){ %>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+alert ("Esta é uma caixa de diálogo ALERT do JavaScript!")
+</SCRIPT>
+<% }%>  
 
 	<div id="main">
 

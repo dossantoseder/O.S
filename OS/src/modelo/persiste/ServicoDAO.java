@@ -23,6 +23,55 @@ public class ServicoDAO {
 
 	}
 
+	
+	public int cadastrarServico(Servico servico) {
+		int valida = -1;
+		try {
+
+			stmt = con
+					.prepareStatement("insert into setor(nomeServico) values(?)");
+			
+			stmt.setString(1, servico.getNomeServico());
+			
+			valida = bd.executarSQL(stmt);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return valida;
+	}
+
+	public void atualizarServico(Servico servico) {
+		try {
+
+			stmt = con.prepareStatement("update servico set nomeservico = ?"
+					+ "where idservico=?");
+
+			stmt.setString(1, servico.getNomeServico());
+			stmt.setInt(2, servico.getIdServico());
+
+			bd.executarSQL(stmt);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void excluirServico(Servico servico)  {
+		try {
+
+			stmt = con.prepareStatement("delete from servico where idservico=?");
+			stmt.setInt(1, servico.getIdServico());
+			
+			bd.executarSQL(stmt);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	public List<Servico> getListarServico() {
 		try {
 			stmt = con.prepareStatement("select * from Servico");
@@ -49,15 +98,15 @@ public class ServicoDAO {
 		ResultSet rs = null;
 		try {
 			stmt = con
-					.prepareStatement("select * from tiposervico where idtiposervico= ?");
+					.prepareStatement("select * from servico where idservico= ?");
 			stmt.setInt(1, id);
 			rs = bd.executarBuscaSQL(stmt);
 
 			while (rs.next()) {
 				servico = new Servico();
 
-				servico.setIdServico(rs.getInt("idtiposervico"));
-				servico.setNomeServico(rs.getString("nometiposervico"));
+				servico.setIdServico(rs.getInt("idservico"));
+				servico.setNomeServico(rs.getString("nomeservico"));
 			}
 
 		} catch (SQLException e) {

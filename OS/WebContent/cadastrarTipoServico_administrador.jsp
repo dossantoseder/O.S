@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <title>CADASTRAR SETOR</title>
+        <title>CADASTRAR TIPO DE SERVIÇO</title>
         <link rel="stylesheet" type="text/css" href="view.css" media="all">
        <link href="estilo.css" type="text/css" rel="stylesheet" />
        <link href="listarOS.css" type="text/css" rel="stylesheet" />
@@ -34,7 +34,7 @@
     <div id="main">
        
            <div id="bar2">    
-            <div id="divbar2"><h2>Novo Setor</h2></div>  
+            <div id="divbar2"><h2>Novo Tipo de Serviço</h2></div>  
            </div>
 
 
@@ -42,7 +42,7 @@
   <br><br><br><br>     
   <br><br><br><br>      
         
-	<form id="form2"  action="Servlet.Controlador" method="post">  
+	<form id="form2"  action="Servlet.Controlador" method="post"> 
   	
 		<div class="itens" >
 	
@@ -53,17 +53,17 @@
 					</label>	
 				</strong> 
 			
-			 	 <input type="text" name="nome_setor"  class="itens_valor" id="e1" style="width: 440px">
+			 	 <input type="text" name="nometiposervico"  class="itens_valor" id="e1" style="width: 440px">
 			 	 <br><br>
 
 		<div id="dbotoes">
 			<div id="dcadastrar">		
-			  <input type="hidden" name="controlador" value="SetorCadastrarCommand"/>
+			  <input type="hidden" name="controlador" value="TipoDeServicoCadastrarCommand"/>
 	          <input id="btcadastrar" type="image" name="botao" src="imagens/btcadastrar.png"> 
 	        </div>
 	        
 	        <div id="dcancelar">  
-	          <input type="hidden" name="controlador" value="SetorCadastrarCommand"/>
+	          <input type="hidden" name="controlador" value="TipoDeServicoCadastrarCommand"/>
 	          <input id="btcancelar" type="image" name="botao" src="imagens/btcancelar.png">
 	        </div>	          
 		</div>

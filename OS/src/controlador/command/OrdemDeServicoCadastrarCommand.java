@@ -70,7 +70,11 @@ public class OrdemDeServicoCadastrarCommand extends HttpServlet implements Comma
 		//ordemDeServico.setSituacao(situacaoFachada.getSituacao(Integer.parseInt(situacao)));
 		
 		ordemDeServicoFacade.cadastrarOrdemDeServico(ordemDeServico);
-		msg = "Ordem de Serviço cadastrada com sucesso";
+		String SEM_ERRO = "0";
+
+		req.setAttribute("SEM_ERRO", SEM_ERRO);
+		req.getRequestDispatcher("/cadastrarOS_administrador.jsp")
+				.forward(req, res);
 
 	}
 

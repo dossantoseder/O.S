@@ -28,12 +28,6 @@
             <div id="menuCadastrarOs"><a href="cadastrarOS_gestor.jsp" >Cadastrar OS</a>&nbsp;&nbsp;</div>
             <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
             <div id="menuCadastrarOs"><a href="cadastrarEquipamento_gestor.jsp" >Equipamento</a>&nbsp;&nbsp;</div>
-            <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
-            <div id="menuCadastrarOs"><a href="cadastrarUsuario_gestor.jsp" >Usuário</a>&nbsp;&nbsp;</div>            
-            <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
-            <div id="menuCadastrarOs"><a href="cadastrarSetor_gestor.jsp" >Setor</a>&nbsp;&nbsp;</div>
-            <div id="divisoriamenu"><img src="imagens/divisoriamenu.png"> &nbsp;</div>
-            <div id="menuCadastrarOs"><a href="cadastrarServico_gestor.jsp" >Tipo de Serviço</a>&nbsp;&nbsp;</div>
             
             </div>
         </div>

@@ -42,7 +42,7 @@
   <br><br><br><br>     
   <br><br><br><br>      
         
-	<form id="form2"  method="post" action="">  
+	<form id="form2"  action="Servlet.Controlador" method="post">
   	
   	
   	
@@ -55,7 +55,7 @@
 					</label>	
 				</strong> 
 			
-			 	 <input type="text" name="nome_equipamento"  class="itens_valor" id="e1" style="width: 440px">
+			 	 <input type="text" name="nome_usuario"  class="itens_valor" id="e1" style="width: 440px">
 			 	 <br><br>
 		<!--================================-->	
 				<strong>
@@ -64,11 +64,11 @@
 					</label>	
 				</strong> 
 			
-			 	 <select name="idsetor"  class="itens_valor" id="l3" style="width: 440px">
+			 	 <select name="tipo_usuario"  class="itens_valor" id="l3" style="width: 440px">
 			 	 	<option value="" selected="selected"></option>
-				  	<option value="" >Administrador</option>
-				  	<option value="" >Gestor</option>
-				  	<option value="" >Solicitante</option>  	                
+				  	<option value="1" >Administrador</option>
+				  	<option value="2" >Gestor</option>
+				  	<option value="3" >Solicitante</option>  	                
 				  </select>
 				  <br><br>
 		<!--================================-->	
@@ -78,7 +78,7 @@
 					</label>	
 				</strong> 
 			
-			 	 <input type="text" name="nome_equipamento"  class="itens_valor" id="e1" style="width: 440px">
+			 	 <input type="text" name="login"  class="itens_valor" id="e1" style="width: 440px">
 			 	 <br><br>
 		<!--================================-->	
 				<strong>
@@ -87,7 +87,7 @@
 					</label>	
 				</strong> 
 			
-			 	 <input type="password" name="nome_equipamento"  class="itens_valor" id="e1" style="width: 440px">
+			 	 <input type="password" name="senha"  class="itens_valor" id="e1" style="width: 440px">
 			 	 <br><br>
 		<!--================================-->	
 				<strong>
@@ -96,7 +96,7 @@
 					</label>	
 				</strong> 
 			
-			 	 <input type="password" name="nome_equipamento"  class="itens_valor" id="e1" style="width: 440px">
+			 	 <input type="password" name="cofirmacao_senha"  class="itens_valor" id="e1" style="width: 440px">
 			 	 
 			 
 		</div>
@@ -104,12 +104,12 @@
 		
 		<div id="dbotoes">
 			<div id="dcadastrar">		
-			  <input type="hidden" name="controlador" value="OrdemDeServicoCadastrarCommand"/>
+			  <input type="hidden" name="controlador" value="UsuarioCadastrarCommand"/>
 	          <input id="btcadastrar" type="image" name="botao" src="imagens/btcadastrar.png"> 
 	        </div>
 	        
 	        <div id="dcancelar">  
-	          <input type="hidden" name="controlador" value="OrdemDeServicoCadastrarCommand"/>
+	          <input type="hidden" name="controlador" value="UsuarioCadastrarCommand"/>
 	          <input id="btcancelar" type="image" name="botao" src="imagens/btcancelar.png">
 	        </div>	          
 		</div>

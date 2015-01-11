@@ -25,7 +25,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<title>LISTAR O.S.</title>
+	<title>LISTAR SETORES</title>
 	<link rel="stylesheet" type="text/css" href="view.css" media="all">
 		<link href="estilo.css" type="text/css" rel="stylesheet" />
 		<link href="listarOS.css" type="text/css" rel="stylesheet" />
@@ -56,52 +56,9 @@ body {
 			<ul>
 				<div id="bar2">
 					<div id="divbar2">
-						<h2>Ordens de Serviço</h2>
+						<h2>Setores</h2>
 					</div>
 
-					<div id="formbar">
-						<label for="data">Data Inicial:&nbsp;</label> <input
-							name="dataInicial" type="date" /> <br> <label for="data">Data
-								&nbsp;Final:&nbsp;&nbsp;</label> <input name="dataFinal" type="date" />
-					</div>
-
-					<div id="formbar2">
-						<label for="data">Status:</label>
-						 <select  style="width:150px"  id="inputstatus"	class="field1">
-							
-							<option selected="selected"> </option>
-							<%
-								for (Status status : listaStatus) {
-							%>
-
-							<option style="width:150px"  value="<%=status.getIdStatus()%>"><%=status.getNomeStatus()%></option>
-
-							<%
-								}
-							%>
-						</select>
-						
-						 <br> <label for="data">Setor:&nbsp;</label>
-						 <select  style="width:150px" 	id="inputsetor" class="field1">
-							<option selected="selected"> </option>
-								<%
-									for (Setor s : setores) {
-								%>
-
-								<option  value="<%=s.getIdSetor()%>"><%=s.getNomeSetor()%></option>
-
-								<%
-									}
-								%>
-						</select>
-					</div>
-					<div id="pesquisar">
-						<input type="hidden" name="controlador" value="ListarCommand" />
-						<input id="btpesquisar" type="image" src="imagens/botaopesquisar"
-							value="Pesquisar" />
-					</div>
-
-					<div id="clear"></div>
 				</div>
 			</ul>
 		</form>
@@ -110,16 +67,13 @@ body {
 												<!-- ========================================
  	 ============= T A B E L A ==============
  	 ========================================-->
-												<div id="form_container">
+												<div id="form_container" >
 
-													<table>
+													<table >
 
 														<tr>
-															<th>Tipo de Serviço</th>
-															<th>Status</th>
-															<th>Data</th>
-															<th>Gestor</th>
-															<th>Setor</th>
+															<th >Setor</th>
+															
 														</tr>
 														<%
 															if (Ordens != null) {
@@ -131,11 +85,6 @@ body {
 															<td><a style="color: blue;"
 																href="Servlet.Controlador?controlador=OrdemDeServicoDadosAtualizacao&id=<%=o.getIdOrdemServico()%>">
 																	<%=o.getServico().getNomeServico()%></a></td>
-
-															<td><%=o.getSituacao().getStatus().getNomeStatus()%></td>
-															<td><%=o.getSituacao().getDataOS()%></td>
-															<td><%=o.getGestor().getNomeUsuario()%></td>
-															<td><%=o.getSetor().getNomeSetor()%></td>
 														</tr>
 
 														<%}%>

@@ -132,10 +132,10 @@ body {
 																href="Servlet.Controlador?controlador=OrdemDeServicoDadosAtualizacao&id=<%=o.getIdOrdemServico()%>">
 																	<%=o.getServico().getNomeServico()%></a></td>
 
-															<td><%=o.getSituacao().getStatus().getNomeStatus()%></td>
-															<td><%=o.getSituacao().getDataOS()%></td>
-															<td><%=o.getGestor().getNomeUsuario()%></td>
-															<td><%=o.getSetor().getNomeSetor()%></td>
+															<td><%//=o.getSituacao().getStatus().getNomeStatus()%></td>
+															<td><%//=o.getSituacao().getDataOS()%>a</td>
+															<td><%//=o.getGestor().getNomeUsuario()%>b</td>
+															<td><%//=o.getSetor().getNomeSetor()%>c</td>
 														</tr>
 
 														<%}%>

@@ -25,7 +25,7 @@ public class OrdemDeServicoFachada {
 
 	public List<OrdemDeServico> getOrdemDeServicos() {
 
-		 ordemDeServicos = ordemDeServicoDAO.getListarOrdemDeServico();
+		// ordemDeServicos = ordemDeServicoDAO.getListarOrdemDeServico();
 		ordemDeServicos = ordemDeServicoDAO.getListarOrdemDeServicoSituacao();
 
 		return ordemDeServicos;

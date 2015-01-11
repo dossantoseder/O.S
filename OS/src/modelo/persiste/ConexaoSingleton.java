@@ -28,7 +28,7 @@ public class ConexaoSingleton {
 
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/db_sigos", "root", "1234");
+					"jdbc:mysql://localhost:3306/bd_sgos", "root", "1234");
 
 		} catch (SQLException e) {
 			System.out.println("Nao foi possível realizar a conexão.");

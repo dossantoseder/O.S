@@ -12,12 +12,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <title>CADASTRAR EQUIPAMENTO</title>
-        <link rel="stylesheet" type="text/css" href="view.css" media="all">
        <link href="estilo.css" type="text/css" rel="stylesheet" />
        <link href="listarOS.css" type="text/css" rel="stylesheet" />
+       
     </head>
     
   
+       <%int semErro = (int) request.getAttribute("SEM_ERRO");%>
     <style>
     	body{
 	    	background-image: url("imagens/branco.png");
@@ -42,7 +43,7 @@
   <br><br><br><br>     
   <br><br><br><br>      
         
-	<form id="form2"  method="post" action="index.jsp">  
+	<form id="form2"  action="Servlet.Controlador" method="post">  
   	
 		<div class="itens" >
 	
@@ -62,18 +63,18 @@
 					</label>	
 				</strong> 
 			
-			 	 <input type="text" name="tombo_equipamento"  class="itens_valor" id="e2" style="width: 440px">			 	 
+			 	 <input type="text" name="tombo"  class="itens_valor" id="e2" style="width: 440px">			 	 
 			 	 			
 			 
 		<br><br>
 		<div id="dbotoes">
 			<div id="dcadastrar">		
-			  <input type="hidden" name="controlador" value="OrdemDeServicoCadastrarCommand"/>
+			  <input type="hidden" name="controlador" value="EquipamentoCadastrarCommand"/>
 	          <input id="btcadastrar" type="image" name="botao" src="imagens/btcadastrar.png"> 
 	        </div>
 	        
 	        <div id="dcancelar">  
-	          <input type="hidden" name="controlador" value="OrdemDeServicoCadastrarCommand"/>
+	          <input type="hidden" name="controlador" value="EquipamentoCadastrarCommand"/>
 	          <input id="btcancelar" type="image" name="botao" src="imagens/btcancelar.png">
 	        </div>	          
 		</div>
@@ -91,6 +92,13 @@
   </div>
    <br><br>
         
-  <%@ include file = "rodape.jsp" %>             
+  <%@ include file = "rodape.jsp" %>   
+  
+  
+<%if(semErro==1){ %>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+alert ("Esta é uma caixa de diálogo ALERT do JavaScript!")
+</SCRIPT>
+<% }%>          
 </body>     
 </html>

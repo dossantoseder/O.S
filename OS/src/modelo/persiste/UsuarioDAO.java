@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelo.Setor;
 import modelo.Usuario;
 
 public class UsuarioDAO {
@@ -26,27 +27,32 @@ public class UsuarioDAO {
 	/**
 	 * Método usado para inserir um osuário no banco de dados
 	 **/
-	public void cadastrarUsuario(Usuario usuario) {
+	public int cadastrarUsuario(Usuario usuario) {
+		int valida = -1;
 		try {
-			stmt = con.prepareStatement("insert into"
-					+ " usuario set login = ?, senha = ?");
+			stmt = con.prepareStatement("insert into usuario (login, senha, nomeusuario, idtipousuario) values(?,?,?,?)");
 			stmt.setString(1, usuario.getLogin());
 			stmt.setString(2, usuario.getSenha());
-			bd.executarSQL(stmt);
+			stmt.setString(3, usuario.getNomeUsuario());
+			stmt.setInt(4, usuario.getTipo());
+			valida = bd.executarSQL(stmt);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return valida;
 	}
 
 	public void atualizarUsuario(Usuario usuario) {
 		try {
 			stmt = con
-					.prepareStatement("update usuario set login=?, senha=? where idsuario = ?");
+					.prepareStatement("update usuario set login=?, senha=? , nomeUsuario=? idtipousuario=? where idsuario = ?");
 
 			stmt.setString(1, usuario.getLogin());
 			stmt.setString(2, usuario.getSenha());
+			stmt.setString(3, usuario.getNomeUsuario());
+			stmt.setInt(4, usuario.getTipo());
 			stmt.setInt(3, usuario.getIdUsuario());
 
 			bd.executarSQL(stmt);
@@ -69,7 +75,7 @@ public class UsuarioDAO {
 
 				usuario = new Usuario();
 
-				usuario.setTipo(rs.getInt("tipo"));
+				usuario.setTipo(rs.getInt("idtipousuario"));
 				usuario.setLogin(rs.getString("login"));
 				usuario.setNomeUsuario(rs.getString("nomeusuario"));
 				usuario.setIdUsuario(rs.getInt("idusuario"));
@@ -123,6 +129,7 @@ public class UsuarioDAO {
 				usuario.setTipo(rs.getInt("idtipousuario"));
 				usuario.setLogin(rs.getString("login"));
 				usuario.setSenha(rs.getString("senha"));
+				usuario.setNomeUsuario(rs.getString("nomeusuario"));
 				usuario.setIdUsuario(rs.getInt("idusuario"));
 			}
 
@@ -149,6 +156,8 @@ public class UsuarioDAO {
 				usuario.setTipo(rs.getInt("idtipo"));
 				usuario.setLogin(rs.getString("login"));
 				usuario.setSenha(rs.getString("senha"));
+				usuario.setNomeUsuario(rs.getString("nomeusuario"));
+				usuario.setTipo(rs.getInt("idtipousuario"));
 				usuarios.add(usuario);
 			}
 
@@ -173,5 +182,32 @@ public class UsuarioDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public List<Usuario> getListarUsuario() {
+		try{
+			stmt = con.prepareStatement("select * from usuario");
+			rs = bd.executarBuscaSQL(stmt);
+			usuarios = new ArrayList<Usuario>();
+
+			while (rs.next()) {
+				usuario = new Usuario();
+
+				usuario.setIdUsuario(rs.getInt("idusuario"));
+				usuario.setLogin(rs.getString("login"));
+				usuario.setNomeUsuario(rs.getString("nomeusuario"));
+				usuario.setTipo(rs.getInt("idtipousuario"));
+
+				usuarios.add(usuario);
+			}
+			
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return usuarios;
+	}
+	
+
+	
 
 }

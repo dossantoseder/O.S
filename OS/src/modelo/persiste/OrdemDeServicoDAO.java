@@ -31,7 +31,6 @@ public class OrdemDeServicoDAO {
 	}
 
 	public OrdemDeServico cadastrarOrdemDeServico(OrdemDeServico ordemDeServico) {
-		ordemDeServico = new OrdemDeServico();
 		try {
 
 			stmt = con
@@ -109,9 +108,9 @@ public class OrdemDeServicoDAO {
 				ordemDeServico.setMotivoDevolucao(rs
 						.getString("motivodevolucao"));
 				ordemDeServico.setServico(servicoDAO.getServico(rs
-						.getInt("idtiposervico")));
-				ordemDeServico.setSetor(setorDAO.getSetor(rs
-						.getInt("idsetor")));
+						.getInt("idservico")));
+				ordemDeServico
+						.setSetor(setorDAO.getSetor(rs.getInt("idsetor")));
 				ordemDeServico.setEquipamento(equipamentoDAO.getEquipamento(rs
 						.getInt("idequipamento")));
 				ordemDeServico.setGestor(gestorDAO.getGestor(rs
@@ -214,7 +213,7 @@ public class OrdemDeServicoDAO {
 
 				ordemDeServico.setIdOrdemServico(rs.getInt("idordemdeservico"));
 				ordemDeServico.setServico(servicoDAO.getServico(rs
-						.getInt("idtiposervico")));
+						.getInt("idservico")));
 				ordemDeServico.setSituacao(situacaoDAO.getSituacaoOS(rs
 						.getInt("idordemdeservico")));
 				ordemDeServico.setGestor(gestorDAO.getGestor(rs

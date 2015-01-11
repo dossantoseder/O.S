@@ -33,7 +33,7 @@ public class OrdemDeServicoDadosAtualizacao implements Command {
 		req.setAttribute("listaser", servicos);
 		req.setAttribute("listastatus", status);
 		req.setAttribute("os", os);
-		req.getRequestDispatcher("/EditarOS_admnistrador.jsp")
+		req.getRequestDispatcher("/EditarOS_administrador.jsp")
 				.forward(req, res);
 	}
 

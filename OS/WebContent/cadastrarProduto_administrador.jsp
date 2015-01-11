@@ -42,7 +42,7 @@
   <br><br><br><br>     
   <br><br><br><br>      
         
-	<form id="form2"  method="post" action="">  
+	<form id="form2"  action="Servlet.Controlador" method="post">   
   	
   	
   	
@@ -55,7 +55,16 @@
 					</label>	
 				</strong> 
 			
-			 	 <input type="text" name="nome_equipamento"  class="itens_valor" id="e1" style="width: 440px">
+			 	 <input type="text" name="nome_produto"  class="itens_valor" id="e1" style="width: 440px">
+			 	 <br><br>
+	    <!--================================-->	
+				<strong>
+					<label class="itens">
+						Número Processo: 
+					</label>	
+				</strong> 
+			
+			 	 <input type="text" name="numero_processo"  class="itens_valor" id="e1" style="width: 440px">
 			 	 <br><br>
 
 		<!--================================-->	
@@ -74,12 +83,12 @@
 		
 		<div id="dbotoes">
 			<div id="dcadastrar">		
-			  <input type="hidden" name="controlador" value="OrdemDeServicoCadastrarCommand"/>
+			  <input type="hidden" name="controlador" value="ProdutoCadastrarCommand"/>
 	          <input id="btcadastrar" type="image" name="botao" src="imagens/btcadastrar.png"> 
 	        </div>
 	        
 	        <div id="dcancelar">  
-	          <input type="hidden" name="controlador" value="OrdemDeServicoCadastrarCommand"/>
+	          <input type="hidden" name="controlador" value="ProdutoCadastrarCommand"/>
 	          <input id="btcancelar" type="image" name="botao" src="imagens/btcancelar.png">
 	        </div>	          
 		</div>
